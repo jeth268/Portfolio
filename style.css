@@ -525,6 +525,7 @@ section {
   font-size: clamp(1.4rem, 1rem + 3.5vw, 2.6rem);
   margin-bottom: 0.5rem;
   line-height: 1.05;
+  color: #ffffff; /* Make "Hey I'm" pure white */
 }
 
 .content h1 span {
@@ -535,13 +536,17 @@ section {
 .content .typewriter {
   font-size: clamp(1.4rem, 1rem + 3.5vw, 2.6rem);
   font-weight: 600;
-  color: #dbe9ff;
+  color: #ffffff; /* Make "I'm a" text white */
   max-width: 800px;
   white-space: nowrap;
   display: inline-flex;
   gap: 8px;
   align-items: center;
 }
+
+/* Ensure animated typed text keeps the accent color while the static text stays white */
+.content h1, .content .typewriter { color: #ffffff !important; }
+.typewriter-text { color: var(--accent) !important; }
 
 .typewriter-text {
   color: var(--accent);
@@ -821,6 +826,191 @@ section {
     width: 32px;
     height: 32px;
   }
+}
+
+/* -----------------------------
+   Skills section mobile fixes
+   - bring paragraph closer to grid
+   - add margin before boxes
+   - make skill cards square and center icons
+   ----------------------------- */
+@media (max-width: 768px) {
+  .technical-expertise p {
+    margin-bottom: 0.9rem !important; /* reduce gap before grid */
+    font-size: 0.98rem !important;
+    color: var(--muted) !important;
+    text-align: center !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    padding: 0 1rem !important;
+    align-items: stretch !important;
+  }
+
+  .skill-card {
+    aspect-ratio: 1 / 1 !important; /* force square */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    background: rgba(255,255,255,0.02) !important;
+    border: 1px solid rgba(255,255,255,0.04) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45) !important;
+    text-align: center !important;
+  }
+
+  .skill-card img {
+    width: 48px !important;
+    height: 48px !important;
+    object-fit: contain !important;
+    margin-bottom: 8px !important;
+    filter: drop-shadow(0 2px 6px rgba(70,130,180,0.18));
+  }
+
+  .skill-card h3 {
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    color: #eaf2ff !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .technical-expertise p { margin-bottom: 0.6rem !important; font-size: 0.95rem !important; }
+
+  .skills-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+  .skill-card img { width: 40px !important; height: 40px !important; }
+}
+
+/* Tighten spacing between "My Skills" and "Technical Expertise" on small screens */
+@media (max-width: 768px) {
+  .skills .title {
+    margin-bottom: 0 !important; /* almost no gap between the headings */
+    line-height: 1 !important;
+  }
+
+  .skills .title span {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .technical-expertise {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .technical-expertise h2 {
+    margin: 0 !important; /* no gap between the two headings */
+    padding: 0 !important;
+    font-weight: 700 !important;
+    color: #eaf2ff !important;
+  }
+
+  /* add space before the paragraph that starts "I've worked" */
+  .technical-expertise p {
+    margin-top: 0.45rem !important; /* small space between heading and paragraph */
+  }
+
+  /* lower the skill boxes (add space above the grid) */
+  .skills-grid {
+    margin-top: 2rem !important; /* lower the boxes more */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills .title { margin-bottom: 0 !important; }
+  .technical-expertise { margin-top: 0 !important; }
+  .technical-expertise h2 { margin: 0 !important; }
+  .technical-expertise p { margin-top: 0.4rem !important; }
+  .skills-grid { margin-top: 1.6rem !important; }
+}
+
+/* Consolidated mobile color & layout overrides
+   - Replaces smaller scattered mobile-only blocks
+   - Keeps desktop palette on mobile and centralizes rules
+*/
+@media (max-width: 768px) {
+  :root {
+    --bg: #0b0b0d;
+    --card: #0f1720;
+    --accent: #4da6ff;
+    --muted: #9aa3ad;
+    --glass: rgba(255,255,255,0.04);
+    --hover-glow: rgba(77, 166, 255, 0.4);
+  }
+
+  /* Background & body colors */
+  body {
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(70,130,180,0.06), transparent 8%),
+                radial-gradient(900px 400px at 90% 90%, rgba(70,130,180,0.04), transparent 10%),
+                var(--bg) !important;
+    color: #e6eef6 !important;
+  }
+
+  /* Headings / Titles — use desktop whites and accents */
+  .content h1,
+  .content .typewriter,
+  .about .subtitle,
+  .specialties-title,
+  .work-title,
+  .services-title,
+  .contact-title,
+  .service-title {
+    color: #ffffff !important;
+    line-height: 1 !important;
+  }
+
+  /* Typewriter words keep accent */
+  .typewriter-text { color: var(--accent) !important; }
+
+  /* Paragraphs / descriptions use muted desktop color */
+  .content p,
+  .technical-expertise p,
+  .work-description,
+  .service-text,
+  .contact-desc {
+    color: var(--muted) !important;
+  }
+
+  /* Skill card titles */
+  .skill-card h3 { color: #eaf2ff !important; }
+
+  /* Buttons, CTAs and cards adopt desktop gradients */
+  .buttons button,
+  .about .right .button button,
+  .about .right .button .contact-btn,
+  .about .right .button .resume-btn,
+  .contact-form .send-btn,
+  .service-card {
+    background: linear-gradient(90deg, #4682b4, #87cefa) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 30px rgba(70,130,180,0.12) !important;
+    border-color: rgba(77,166,255,0.1) !important;
+  }
+
+  /* Navigation and dropdown styling */
+  nav { background: rgba(70,130,180,0.1) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+  .dropdown { background: rgba(11,11,13,0.98) !important; backdrop-filter: blur(5px) !important; }
+  .dropdown .links a { color: #e6eef6 !important; }
+
+  /* Services icon color */
+  .service-icon { color: #4da6ff !important; background: rgba(77,166,255,0.1) !important; }
+
+  /* Footer colors */
+  footer, .footer p { color: #aaa !important; }
+  .footer-links a { color: #ccc !important; }
+
+  /* Slightly lower skill grid to give breathing room */
+  .skills-grid { margin-top: 1.6rem !important; }
 }
 
 
@@ -1329,6 +1519,110 @@ section#about {
     transform: none !important;
     width: 100% !important;
   }
+
+  /* ==========================================
+     Mobile polish: clearer touch targets
+     stacked cards, full-width CTAs & inputs
+     ========================================== */
+  @media (max-width: 768px) {
+    html, body {
+      font-size: 16px; /* consistent readable base */
+    }
+
+    /* Hero tweaks */
+    .main-container {
+      padding-top: 84px !important; /* ensure space under sticky nav */
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    .content h1 {
+      font-size: 1.8rem !important;
+      line-height: 1.15 !important;
+      text-align: center !important;
+    }
+
+    /* Make CTAs easy to tap and more prominent */
+    .buttons {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+
+    .buttons button {
+      width: 92% !important;
+      max-width: 420px !important;
+      padding: 14px 18px !important;
+      font-size: 1rem !important;
+      border-radius: 14px !important;
+    }
+
+    .hire-btn {
+      background: linear-gradient(90deg, #4682b4, #87cefa) !important;
+      color: #fff !important;
+      box-shadow: 0 10px 30px rgba(70,130,180,0.18) !important;
+    }
+
+    .work-btn {
+      background: transparent !important;
+      color: var(--accent) !important;
+      border: 2px solid rgba(77,166,255,0.14) !important;
+      box-shadow: none !important;
+    }
+
+    /* Mobile nav dropdown: left-aligned, roomy links */
+    .dropdown .links a {
+      padding: 1.25rem 1.25rem !important;
+      font-size: 1.15rem !important;
+      text-align: left !important;
+    }
+
+    /* Stack portfolio cards for easy scrolling */
+    .work-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+      padding: 0 1rem !important;
+    }
+
+    .work-card {
+      width: 100% !important;
+      display: block !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45) !important;
+    }
+
+    .work-card img { width: 100% !important; height: auto !important; display: block !important; }
+
+    /* Contact form inputs full width and finger-friendly */
+    .contact-form form input,
+    .contact-form form textarea {
+      width: 92% !important;
+      max-width: 720px !important;
+      padding: 14px 12px !important;
+      margin: 0.5rem 0 !important;
+      border-radius: 10px !important;
+      border: 1px solid rgba(255,255,255,0.06) !important;
+      background: rgba(255,255,255,0.02) !important;
+      color: #eaf2ff !important;
+      font-size: 0.95rem !important;
+    }
+
+    .contact-form .send-btn {
+      width: 92% !important;
+      max-width: 420px !important;
+      padding: 14px !important;
+      margin-top: 0.75rem !important;
+      border-radius: 12px !important;
+    }
+
+    /* Reduce visual noise on very small screens */
+    .mouse-scroll { display: none !important; }
+
+    footer .footer-links { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; text-align: center !important; }
+  }
 }
 
 .about .subtitle{font-size:1.15rem;color:#eaf2ff;font-weight:700;margin-bottom:0.6rem}
@@ -1337,6 +1631,7 @@ section#about {
   .about .subtitle {
     font-size: 1rem !important;
     margin-left: 0 !important;
+    color: #ffffff !important; /* ensure subtitle is white */
   }
 }
 
@@ -1952,6 +2247,7 @@ section#about {
   font-size: 2.2rem;
   font-weight: 500;
   margin-bottom: 10px;
+  color: #ffffff !important; /* My Portfolio title white */
 }
 
 .work-description {
@@ -2098,6 +2394,7 @@ section#about {
   font-size: 2.5rem;
   margin-bottom: 15px;
   font-weight: 550;
+  color: #ffffff !important; /* My Services title white */
 }
 
 .services-description {
@@ -2167,7 +2464,7 @@ section#about {
   font-size: 1.3rem;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #e6f2ff;
+  color: #ffffff !important; /* Service card titles white (e.g. Web Development) */
 }
 
 .service-text {
@@ -3906,4 +4203,12 @@ section#about {
   .footer-socials a {
     font-size: 1.2rem !important;
   }
+}
+
+/* Extra enforce: ensure hero texts are white on very small screens */
+@media (max-width: 480px) {
+  /* Keep very small screen typography consistent with desktop */
+  .content h1,
+  .content .typewriter { color: #ffffff !important; }
+  .typewriter-text { color: var(--accent) !important; }
 }

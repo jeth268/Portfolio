@@ -27,15 +27,14 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div class="dropdown">
+  <div class="dropdown" id="mobileMenu">
     <div class="links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#recent-work">Portfolio</a>
-      <a href="#services">Services</a>
-      <a href="#contact-section">Contact</a>
-      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      <a href="#home" onclick="closeMobileMenu()">Home</a>
+      <a href="#about" onclick="closeMobileMenu()">About</a>
+      <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+      <a href="#recent-work" onclick="closeMobileMenu()">Portfolio</a>
+      <a href="#services" onclick="closeMobileMenu()">Services</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
     </div>
   </div>
 </nav>
@@ -47,11 +46,11 @@
   </div>
 
   <div class="content">
-    <h1 data-aos="fade-left">Hey I'm <span>Haven</span></h1>
+    <h1 data-aos="fade-left"><span class="greeting">Hey I'm</span> <span>Haven</span></h1>
     <div class="typewriter">I'm a <span class="typewriter-text"></span></div>
 
     <p>
-      A 3rd-year IT student passionate about front-end development and digital design. I specialize in building responsive websites, editing short-form trending videos, and designing user-centered visual experiences. I also collaborate with creators to produce high-quality social media content optimized for maximum engagement, view retention, and lead conversion.
+      "An incoming 4th-year IT student passionate about front-end development, UI/UX design, and multimedia creation. I specialize in building responsive, modern web applications, crafting short-form trending videos, and designing user-centered visual experiences. I also collaborate with creators to produce high-quality social media content optimized for engagement, view retention, and conversions."
     </p>
 
     <div class="connect-section">
@@ -66,7 +65,9 @@
           <a href="https://www.facebook.com/share/14M5qpgJzXo/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
           <a href="https://www.instagram.com/haven.jro" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.tiktok.com/@hvnjro" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="mailto:havenjethrourbano6@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/jeth268" target="_blank" rel="noopener">
+  <i class="fa-brands fa-github"></i>
+</a>
         </div>
       </div>
     </div>
@@ -118,11 +119,10 @@
       <div class="right">
         <div class="subtitle">Frontend Developer • UI/UX • Multimedia</div>
         <p>
-          Hi! I’m Haven Jethro, a passionate Frontend Developer, UI/UX Designer, and Creative Multimedia Artist currently studying Information Technology (3rd Year College). I specialize in crafting visually appealing and user-friendly websites using HTML, CSS, and JavaScript, while also bringing stories to life through video editing, photography, and graphic design.
+         Hi! I’m Haven Jethro, an Incoming 4th Year IT student and Full-Stack Developer with expertise in UI/UX design and multimedia creation. I build responsive, modern web applications and create engaging video and visual content using tools like Adobe Premiere Pro, CapCut, and VN.
         </p>
-
         <p>
-          I enjoy combining technology and creativity — whether I’m designing a responsive website, editing cinematic videos with Adobe Premiere Pro, CapCut, or VN, or capturing moments behind the lens. My goal is to build digital experiences that not only look great but also connect with people.
+          I thrive at the intersection of technology and creativity, crafting digital experiences that are functional, visually striking, and meaningful—whether it’s full-stack development, intuitive interface design, or cinematic multimedia production.
         </p>
 
         <div class="specialties">
@@ -139,7 +139,8 @@
         </div>
 
         <div class="button">
-          <button class="resume-btn">Download Resume</button>
+          <!-- To use: Replace YOUR_RESUME_FILE_ID with your actual Google Drive file ID, or link to your resume file directly -->
+          <a href="https://drive.google.com/uc?export=download&id=YOUR_RESUME_FILE_ID" class="resume-btn" title="Download your resume">Download Resume</a>
           <a href="#contact" class="contact-btn">Contact Me</a>
         </div>
       </div>
@@ -187,17 +188,17 @@
       </div>
 
       <div class="skill-card">
-        <img src="https://www.pngall.com/capcut-logo-png/" alt="CapCut Icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/capcut/capcut-original.svg" alt="CapCut Icon" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/6/6e/CapCut_Logo.png'">
         <h3>CapCut</h3>
       </div>
 
       <div class="skill-card">
-        <img src="https://www.flaticon.com/free-icon/after-effects_5968428" alt="After Effects Icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" alt="After Effects Icon" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/f/f2/Adobe_After_Effects_CC_icon.svg'">
         <h3>After Effects</h3>
       </div>
 
       <div class="skill-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Premiere Pro Icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro Icon" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/4/4f/Adobe_Premiere_Pro_CC_icon.svg'">
         <h3>Premiere Pro</h3>
       </div>
     </div>
@@ -209,68 +210,320 @@
     <h3 class="work-subtitle">RECENT WORK</h3>
     <h2 class="work-title">My Portfolio</h2>
     <p class="work-description">
-      Check out some of my latest projects. Each project represents a unique challenge I've tackled using various technologies.
+      Check out my latest projects, from cinematic videos and game highlights to vlogs and web/system creations. Each piece showcases my creativity, technical skills, and ability to bring ideas to life.
     </p>
 
-    <!-- Filter Buttons -->
-    <div class="work-filters">
-      <button class="filter-btn active">All Projects</button>
-      <button class="filter-btn">Landing page</button>
-      <button class="filter-btn">Content</button>
-      <button class="filter-btn">Reels</button>
-      <button class="filter-btn">HTML</button>
-      <button class="filter-btn">Videos</button>
+<!-- Filter Buttons -->
+<div class="work-filters">
+  <button class="filter-btn active" data-category="all">All Projects</button>
+  <button class="filter-btn" data-category="game">Game highlights</button>
+  <button class="filter-btn" data-category="content">Content</button>
+  <button class="filter-btn" data-category="cinematic">Cinematic</button>
+  <button class="filter-btn" data-category="vlogs">Vlogs</button>
+  <button class="filter-btn" data-category="website">Website/App</button>
+</div>
+
+<!-- Project Cards -->
+<div class="work-grid">
+
+  <!-- Video 1 to Video 6 (already visible) -->
+  <!-- Video 1 -->
+   <div class="work-card" data-category="cinematic">
+    <img src="Video1.png" alt="Cinematic Music Video" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>cinematic</span></div>
+      <h4 class="project-title">Cinematic Music Video</h4>
+      <p class="project-description">A short music video with a cinematic vibe.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7290926061456526598" target="_blank">Watch Video →</a>
     </div>
+  </div>
 
-    <!-- Project Cards -->
-    <div class="work-grid">
-      <div class="work-card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Project 1">
-        <div class="work-content">
-          <div class="tech-tags">
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>HTML5</span>
-          </div>
-          <h4 class="project-title">Aonix v2</h4>
-          <p class="project-description">
-            Built a dynamic and responsive website using ReactJS, leveraging reusable components for efficient development.
-          </p>
-          <a href="#" class="view-link">View Project →</a>
-        </div>
-      </div>
+  <!-- Video 2 -->
+  <div class="work-card" data-category="game">
+    <img src="Video2.png" alt="Nolan 5 Man Set" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Nolan 5 Man Set</h4>
+      <p class="project-description">Mobile Legends edit featuring Nolan gameplay.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7439034788775742738" target="_blank">Watch Video →</a>
+    </div>
+  </div>
 
-      <div class="work-card">
-        <img src="https://images.unsplash.com/photo-1537432376769-00a7e6a0e7f0?auto=format&fit=crop&w=800&q=80" alt="Project 2">
-        <div class="work-content">
-          <div class="tech-tags">
-            <span>Content</span>
-            <span>Reels</span>
-            <span>Videos</span>
-          </div>
-          <h4 class="project-title">Dataviv Technologies</h4>
-          <p class="project-description">
-            Created a visually appealing business website with smooth animations and optimized layout for responsiveness.
-          </p>
-          <a href="#" class="view-link">View Project →</a>
-        </div>
-      </div>
+  <!-- Video 3 -->
+  <div class="work-card" data-category="game">
+    <img src="Video3.png" alt="Nolan vs Gusion" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Nolan vs Gusion</h4>
+      <p class="project-description">Gameplay edit showcasing Nolan vs Gusion highlights.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7370633071525154054" target="_blank">Watch Video →</a>
+    </div>
+  </div>
 
-      <div class="work-card">
-        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80" alt="Project 3">
-        <div class="work-content">
-          <div class="tech-tags">
-            <span>React</span>
-            <span>JavaScript</span>
-            <span>HTML5</span>
-          </div>
-          <h4 class="project-title">Tradebattle</h4>
-          <p class="project-description">
-            An interactive platform where users can simulate stock market trading using real-time analytics and UI animations.
-          </p>
-          <a href="#" class="view-link">View Project →</a>
-        </div>
-      </div>
+  <!-- Video 4 -->
+  <div class="work-card" data-category="game">
+    <img src="Video4.png" alt="Ling Highlights" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Ling Highlights</h4>
+      <p class="project-description">Fast-paced Ling gameplay highlights edit.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7384537093822745863" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <!-- Video 5 -->
+  <div class="work-card" data-category="game">
+    <img src="Video5.png" alt="Nah, I'd Win" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Nah, I'd Win</h4>
+      <p class="project-description">Stylized Mobile Legends edit with dramatic effects.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7385084574998564104" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <!-- Video 6 -->
+  <div class="work-card" data-category="game">
+    <img src="Video6.png" alt="Test 60 FPS" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Test 60 FPS</h4>
+      <p class="project-description">Smooth 60 FPS gameplay edit test.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7408866704945696007" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <!-- Hidden Videos 7 to 9 -->
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video7.png" alt="Video 7" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">I'll do it</h4>
+      <p class="project-description">Grind to Grandmaster.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7387306665583938817?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video8.png" alt="Video 8" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Kahit di mo alam</h4>
+      <p class="project-description">Crisp Crit build.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7395204476207942930?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video9.png" alt="Video 9" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Fanny User?</h4>
+      <p class="project-description">Lowlights.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7412339293009546504?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+    <div class="work-card hidden-project" data-category="game">
+    <img src="Video10.png" alt="Video 10" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Boyfriend Trend</h4>
+      <p class="project-description">Fanny Highlights.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7411927480136944914?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video11.png" alt="Video 11" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Mobile Legends</span></div>
+      <h4 class="project-title">Nag bug ml ko</h4>
+      <p class="project-description">Hayabusa Lord steal.</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7497996829561326855?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video12.png" alt="Video 12" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">new skin</h4>
+      <p class="project-description">Maggie Highlights💥</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7268289336884415750?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+    <div class="work-card hidden-project" data-category="game">
+    <img src="Video13.png" alt="Video 13" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">Hound💀</h4>
+      <p class="project-description">Hound 1 tap?</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7267944729319443720?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+  
+
+      <div class="work-card hidden-project" data-category="game">
+    <img src="Video14.png" alt="Video 14" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">No scope?</h4>
+      <p class="project-description">Quick shots</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7267575425306610962?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781
+" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video15.png" alt="Video 15" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">Don't</h4>
+      <p class="project-description">chill rg</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7267491214209993990?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video16.png" alt="Video 16" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">This song is a banger</h4>
+      <p class="project-description">Go!</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7267197294775258374?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+
+  <div class="work-card hidden-project" data-category="game">
+    <img src="Video17.png" alt="Video 17" class="project-poster">
+    <div class="work-content">
+      <div class="tech-tags"><span>game</span><span>Farlight84</span></div>
+      <h4 class="project-title">Escapism clutch</h4>
+      <p class="project-description">this song got me moving</p>
+      <a class="view-link" href="https://www.tiktok.com/@hvnjro/video/7274531472822783237?is_from_webapp=1&sender_device=pc&web_id=7615668836319413781" target="_blank">Watch Video →</a>
+    </div>
+  </div>
+
+  <div class="work-card hidden-project" data-category="website">
+    <img src="Practicore.png" alt="Practicore" class="project-poster">
+    <div class="work-content">
+     <div class="tech-tags"><span>website</span></div>
+      <h4 class="project-title">Practicore</h4>
+      <p class="project-description">Student internship Monitoring System</p>
+      <a class="view-link" href="https://practicore-front-end-production.up.railway.app/" target="_blank">View Project →</a>
+    </div>
+  </div>
+
+<div class="work-card hidden-project" data-category="website">
+    <img src="QUICKIFY.png" alt="QUICKIFY" class="project-poster">
+    <div class="work-content">
+     <div class="tech-tags"><span>App</span><span>Chrome Extension</span></div>
+      <h4 class="project-title">QUICKIFY</h4>
+      <p class="project-description">Note taking Chrome extension</p>
+      <a class="view-link" href="https://drive.google.com/drive/folders/1AL_UxEg44qPSz3It-XxOTC4VzBcQL8ZE" target="_blank">View Project →</a>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+<!-- Load More Button -->
+<div style="text-align:center; margin-top:20px;">
+  <button id="load-more-btn">Load More Projects</button>
+</div>
+
+<style>
+.hidden-project {
+  display: none;
+}
+</style>
+
+
+
+<style>
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+.work-card {
+  background-color: #1f1f2e;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #ffffff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.project-poster {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+.work-content {
+  padding: 15px;
+}
+
+.tech-tags span {
+  background-color: #2b2b3a;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.project-title {
+  margin: 10px 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #c0c0c0;
+  margin-bottom: 10px;
+}
+
+.view-link {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#load-more-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0ea5e9;
+  color: white;
+  cursor: pointer;
+}
+
+#load-more-btn:hover {
+  background-color: #0284c7;
+}
+</style>
+
+      <!-- Add more work-card blocks for your works/videos -->
     </div>
   </div>
 </section>
@@ -368,13 +621,15 @@
 
     <div class="contact-form">
       <h3>Send a Message</h3>
-      <div class="two-col">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-      </div>
-      <input type="text" placeholder="Subject">
-      <textarea rows="5" placeholder="Message"></textarea>
-      <button>Send Message</button>
+      <form id="contactForm">
+        <div class="two-col">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea rows="5" id="message" placeholder="Message" required></textarea>
+        <button type="submit" class="send-btn">Send Message</button>
+      </form>
     </div>
   </div>
 </section>
@@ -407,58 +662,6 @@
 </footer>
 
 <!-- === JS TYPEWRITER & FILTER === -->
-<script>
-const roles = [
-  'Video Editor',
-  'Developer',
-  'UI/UX Designer',
-  'Web Developer',
-  'Front-end Developer',
-  'Photographer',
-  'Videographer'
-];
-
-const el = document.querySelector('.typewriter-text');
-let roleIndex = 0, charIndex = 0, deleting = false;
-const typingSpeed = 80, pauseBetween = 1200;
-
-function tick() {
-  if (!el) return;
-  const current = roles[roleIndex];
-  el.textContent = deleting
-    ? current.slice(0, --charIndex)
-    : current.slice(0, ++charIndex);
-
-  if (!deleting && charIndex === current.length) {
-    deleting = true;
-    setTimeout(tick, pauseBetween);
-  } else if (deleting && charIndex === 0) {
-    deleting = false;
-    roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(tick, 300);
-  } else {
-    setTimeout(tick, deleting ? typingSpeed / 2 : typingSpeed);
-  }
-}
-tick();
-
-// Portfolio Filter
-const filterBtns = document.querySelectorAll('.filter-btn');
-const workCards = document.querySelectorAll('.work-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const category = btn.textContent.toLowerCase();
-
-    workCards.forEach(card => {
-      const tags = Array.from(card.querySelectorAll('.tech-tags span')).map(t => t.textContent.toLowerCase());
-      card.style.display = category === 'all projects' || tags.includes(category) ? 'block' : 'none';
-    });
-  });
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
-

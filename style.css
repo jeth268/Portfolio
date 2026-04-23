@@ -2327,8 +2327,21 @@ section#about {
   object-fit: cover;
 }
 
+.project-poster,
+.project-video {
+  width: 100%;
+  height: 260px; /* match image */
+  object-fit: cover;
+  display: block;
+
+}
+video:fullscreen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps portrait correct */
+}
 .work-content {
-  padding: 20px;
+  padding: 15px; /* was 20px → slightly tighter */
   text-align: left;
 }
 
